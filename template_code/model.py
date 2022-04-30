@@ -6,14 +6,14 @@ class AFDetector:
     """
     def __init__(self, sample_rate):
         """
-        Initialize the af detector. It's better to load/build your model,
-        filters, etc. in __init__ method to avoid loading them while prediction.
+        Initialize the af detector.
 
         Params:
         -----
         sample_rate: int,
             Sampling frequency of the inputs.
         """
+
         # load model
 
         # load filters
