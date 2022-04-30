@@ -18,11 +18,18 @@ def main(argv):
         .unstack()
     )
 
-    print(confmat)
-    # calculate scores
+    true_positives  = confmat.iloc[1, 1]
+    false_positives  = confmat.iloc[0, 1]
+    true_negatives  = confmat.iloc[0, 0]
+    false_negatives  = confmat.iloc[1, 0]
+
+    # calculate some metrics
+
 
     # write results to file
-    
+    print(f'writing results to: {output_file}')
+    with open(output_file, 'w') as file:
+        file.writelines(confmat.__str__())
 
 def arg_parser(argv):
     opts, args = getopt.getopt(argv,"i:o:",["ifile=","ofile="])
