@@ -4,10 +4,15 @@ class AFDetector:
     """
     Template class for af detector submission.
     """
-    def __init__(self):
+    def __init__(self, sample_rate):
         """
         Initialize the af detector. It's better to load/build your model,
         filters, etc. in __init__ method to avoid loading them while prediction.
+
+        Params:
+        -----
+        sample_rate: int,
+            Sampling frequency of the inputs.
         """
         # load model
 
