@@ -10,7 +10,7 @@ class AFDetector:
 
         Params:
         -----
-        sample_rate: int,
+        sample_rate: int
             Sampling frequency of the inputs.
         """
 
