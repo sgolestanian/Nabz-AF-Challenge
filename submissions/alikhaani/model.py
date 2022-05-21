@@ -1,5 +1,5 @@
 import tensorflow as tf
-from keras.models import load_model
+from tensorflow.keras.models import load_model
 from scipy.io import loadmat
 # Please run "pip install neurokit2" to install NeuroKit2
 import neurokit2.signal as nsig
