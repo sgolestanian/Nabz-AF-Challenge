@@ -37,6 +37,9 @@ def main(argv):
             label_str = label_field[0]
             label = 1 if label_str=='AF' else 0
             ecg_lead_1 = np.array(data[1][0])
+            if len(ecg_lead_1)==0:
+                bar.update(i)
+                continue
             af_class = af_detector.classify(ecg_lead_1).numpy()
             result_table.append([recordname, label, af_class])
             bar.update(i)
