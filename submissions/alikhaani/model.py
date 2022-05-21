@@ -20,9 +20,10 @@ class AFDetector:
 
 
         # load model
-        model = load_model("AF-detection.h5")
+        self.model = load_model("AF-detection.h5")
 
         # load filters
+        self.sample_rate = sample_rate
 
     def classify(self, ecg):
         """
