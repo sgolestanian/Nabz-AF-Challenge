@@ -40,7 +40,10 @@ def main(argv):
             if len(ecg_lead_1)==0:
                 bar.update(i)
                 continue
-            af_class = af_detector.classify(ecg_lead_1).numpy()
+            try:
+                af_class = af_detector.classify(ecg_lead_1).numpy()
+            except ValueError:
+                af_class = -1
             result_table.append([recordname, label, af_class])
             bar.update(i)
 
@@ -50,8 +53,9 @@ def main(argv):
 
 def arg_parser(argv):
     opts, args = getopt.getopt(argv,"d:o:",["dataset=","output="])
-
+    print(opts)
     for opt, arg in opts:
+        print(opt)
         if opt == '-d' or opt == '--dataset':
             dataset_file = arg
         elif opt == '-o' or opt == '--output':
